@@ -1,5 +1,5 @@
 
-public class Location {
+public class PandemicLocation {
 	
 	private int x;
 	private int y;
