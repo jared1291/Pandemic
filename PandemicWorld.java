@@ -5,31 +5,17 @@ public class PandemicWorld {
 
 	private int width;
 	private int height;
-	private ArrayList<LifeForm> creatureList;
+	private ArrayList<PandemicLifeForm> creatureList;
 
-	public World(int width, int height) {
+	public PandemicWorld(int width, int height) {
 		super();
 		this.width = width;
 		this.height = height;
-		this.creatureList = new ArrayList<LifeForm>();
+		this.creatureList = new ArrayList<PandemicLifeForm>();
 	}
 
 	public void letTimePass() {
-
-		makeNewCreatures();
 		changeLocation();
-		getNutrients();
-		creaturesGetOlder();
-		purgeTheDead();
-	}
-
-	public void makeNewCreatures() {
-		int currentSizeOfCreatureList = creatureList.size();
-
-		System.out.println("size of list is " + currentSizeOfCreatureList);
-		for (int i = 0; i < currentSizeOfCreatureList; i++) {
-			creatureList.get(i).reproduce();
-		}
 	}
 
 	public void changeLocation() {
@@ -38,31 +24,6 @@ public class PandemicWorld {
 		System.out.println("(move) size of list is " + currentSizeOfCreatureList);
 		for (int i = 0; i < currentSizeOfCreatureList; i++) {
 			creatureList.get(i).move();
-		}
-	}
-
-	public void getNutrients() {
-		int currentSizeOfCreatureList = creatureList.size();
-
-		System.out.println("(eat) size of list is " + currentSizeOfCreatureList);
-		for (int i = 0; i < currentSizeOfCreatureList; i++) {
-			creatureList.get(i).eat();
-		}
-	}
-
-	public void creaturesGetOlder() {
-		for (LifeForm l : creatureList) {
-			l.age(1);
-		}
-	}
-
-	public void purgeTheDead() {
-		int i = 0;
-		while (i < creatureList.size()) {
-			if (creatureList.get(i).isDead())
-				creatureList.remove(i);
-			else
-				i++;
 		}
 	}
 
@@ -82,11 +43,11 @@ public class PandemicWorld {
 		this.height = height;
 	}
 
-	public ArrayList<LifeForm> getCreatureList() {
+	public ArrayList<PandemicLifeForm> getCreatureList() {
 		return creatureList;
 	}
 
-	public void setCreatureList(ArrayList<LifeForm> creatureList) {
+	public void setCreatureList(ArrayList<PandemicLifeForm> creatureList) {
 		this.creatureList = creatureList;
 	}
 
