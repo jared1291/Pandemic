@@ -5,16 +5,15 @@ public class PandemicCreature extends PandemicLifeForm {
 
 	private int currentSizeOfCreatureList = myWorld.getCreatureList().size() + 1;
 
-	public PandemicCreature(PandemicLocation myLocation, PandemicWorld myWorld) {
-		super(myLocation, myWorld);
-		myColor = Color.orange;
+	public PandemicCreature(PandemicLocation myLocation, Color myColor, PandemicWorld myWorld) {
+		super(myLocation, myColor, myWorld);
 	}
 
 
 	public void move() {
 
 		for (int creature = 0; creature < currentSizeOfCreatureList; creature++) {
-			if (myWorld.getCreatureList().get(creature).getMyColor() == Color.orange) {
+			if (myWorld.getCreatureList().get(creature).getMyColor() == Color.orange || myWorld.getCreatureList().get(creature).getMyColor() == Color.magenta) {
 
 				int currX = myWorld.getCreatureList().get(creature).getMyLocation().getX();
 				int currY = myWorld.getCreatureList().get(creature).getMyLocation().getY();
