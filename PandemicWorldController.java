@@ -2,6 +2,7 @@
 import java.awt.Color;
 import acm.graphics.*;
 import acm.program.*;
+import acm.util.RandomGenerator;
 
 
 public class PandemicWorldController extends GraphicsProgram {
@@ -10,6 +11,7 @@ public class PandemicWorldController extends GraphicsProgram {
 	private GCanvas theWorldCanvas;
 	public static final int APPLICATION_WIDTH = 1000;
 	public static final int APPLICATION_HEIGHT = 1000;
+	RandomGenerator rgen = new RandomGenerator();
 
 	public void run() {
 		setUpWorld();
@@ -22,63 +24,67 @@ public class PandemicWorldController extends GraphicsProgram {
 
 	public void setUpWorld() {
 		theWorld = new PandemicWorld(100, 100);
-
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(1, 1), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(2, 26), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(10, 4), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(60, 54), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(43, 27), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(89, 77), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(18, 76), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(23, 23), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(6, 7), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(92, 3), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(2, 69), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(77, 12), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(10, 4), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(65, 45), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(43, 22), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(5, 8), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(61, 6), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(2, 12), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(33, 56), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(24, 54), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(9, 6), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(9, 5), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(6, 16), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(5, 16), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(65, 43), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(65, 44), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(40, 67), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(40, 66), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(41, 67), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(41, 66), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(54, 60), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(54, 59), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(13, 13), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(13, 12), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(80, 78), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(80, 79), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(11, 76), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(11, 75), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(15, 25), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(14, 25), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(72, 47), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(72, 49), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(78, 52), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(78, 54), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(22, 47), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(22, 49), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(67, 12), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(67, 14), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(20, 50), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(20, 49), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(40, 87), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(40, 85), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(60, 72), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(60, 73), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(95, 11), theWorld));
-		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(94, 15), theWorld));
+		
+//		for (int i = 0; i < 100; i++) {
+//		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(rgen.nextInt(1, 100), rgen.nextInt(1,100)), theWorld));
+//	}
+		
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(1, 1), Color.magenta, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(2, 26), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(10, 4), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(60, 54), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(43, 27), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(89, 77), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(18, 76), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(23, 23), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(6, 7), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(92, 3), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(2, 69), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(77, 12), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(10, 4), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(65, 45), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(43, 22), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(5, 8), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(61, 6), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(2, 12), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(33, 56), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(24, 54), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(9, 6), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(9, 5), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(6, 16), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(5, 16), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(65, 43), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(65, 44), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(40, 67), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(40, 66), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(41, 67), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(41, 66), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(54, 60), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(54, 59), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(13, 13), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(13, 12), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(80, 78), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(80, 79), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(11, 76), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(11, 75), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(15, 25), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(14, 25), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(72, 47), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(72, 49), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(78, 52), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(78, 54), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(22, 47), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(22, 49), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(67, 12), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(67, 14), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(20, 50), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(20, 49), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(40, 87), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(40, 85), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(60, 72), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(60, 73), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(95, 11), Color.orange, theWorld));
+		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(94, 15), Color.orange, theWorld));
 
 		theWorldCanvas = this.getGCanvas();
 	}
