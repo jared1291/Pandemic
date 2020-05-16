@@ -26,7 +26,7 @@ public class PandemicWorldController extends GraphicsProgram {
 		theWorld = new PandemicWorld(100, 100);
 		
 //		for (int i = 0; i < 100; i++) {
-//		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(rgen.nextInt(1, 100), rgen.nextInt(1,100)), theWorld));
+//		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(rgen.nextInt(1, 100), rgen.nextInt(1,100)), Color.orange, theWorld));
 //	}
 		
 		theWorld.getCreatureList().add(new PandemicCreature(new PandemicLocation(1, 1), Color.magenta, theWorld));
