@@ -1,10 +1,9 @@
-
 public class PandemicLocation {
 	
 	private int x;
 	private int y;
 	
-	public Location(int x, int y) {
+	public PandemicLocation(int x, int y) {
 		super();
 		this.x = x;
 		this.y = y;
