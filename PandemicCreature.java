@@ -1,9 +1,11 @@
 
 import java.awt.Color;
+import acm.util.RandomGenerator;
 
 public class PandemicCreature extends PandemicLifeForm {
 
 	private int currentSizeOfCreatureList = myWorld.getCreatureList().size() + 1;
+	RandomGenerator rgen = new RandomGenerator();
 
 	public PandemicCreature(PandemicLocation myLocation, Color myColor, PandemicWorld myWorld) {
 		super(myLocation, myColor, myWorld);
@@ -18,9 +20,11 @@ public class PandemicCreature extends PandemicLifeForm {
 				int currX = myWorld.getCreatureList().get(creature).getMyLocation().getX();
 				int currY = myWorld.getCreatureList().get(creature).getMyLocation().getY();
 
-				// Allows movement of up to 1 step forward or backward
-				int stepsX = (int) (Math.random() * 2) - 1;
-				int stepsY = (int) (Math.random() * 2) - 1;
+				// Allows movement of up to 3 steps forward or backward
+//				int stepsX = (int) (Math.random() * 2) - 1;
+//				int stepsY = (int) (Math.random() * 2) - 1;
+				int stepsX = rgen.nextInt(-3, 3);
+				int stepsY = rgen.nextInt(-3, 3);
 
 				currX += stepsX;
 				currY += stepsY;
